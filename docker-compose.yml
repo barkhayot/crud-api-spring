@@ -13,9 +13,9 @@ services:
     ports:
       - "9091:9091"
     environment:
-        - SPRING_DATASOURCE_URL=jdbc:postgresql://ec2-52-79-100-203.ap-northeast-2.compute.amazonaws.com:3457/test-api
+        - SPRING_DATASOURCE_URL=jdbc:postgresql:<host>:<port>/<db_name>
         - SPRING_DATASOURCE_USERNAME=postgres
-        - SPRING_DATASOURCE_PASSWORD=6dp)QZuqXa?,5nC
+        - SPRING_DATASOURCE_PASSWORD=postgres
         - SPRING_JPA_HIBERNATE_DDL_AUTO=update
 
   # postgresqldb:
@@ -25,4 +25,4 @@ services:
   #           - 3457:5432
   #         environment:
   #           - POSTGRES_USER=postgres
-  #           - POSTGRES_PASSWORD=6dp)QZuqXa?,5nC
+  #           - POSTGRES_PASSWORD=postgres
