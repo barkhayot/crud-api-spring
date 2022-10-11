@@ -1,0 +1,28 @@
+version: '3'
+
+services:
+  springboot-docker-compose-app-container:
+    image: crud-api-app:1
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    volumes:
+      - /data/crud-api-app
+    # depends_on:
+    #     - postgresqldb
+    ports:
+      - "9091:9091"
+    environment:
+        - SPRING_DATASOURCE_URL=jdbc:postgresql://ec2-52-79-100-203.ap-northeast-2.compute.amazonaws.com:3457/test-api
+        - SPRING_DATASOURCE_USERNAME=postgres
+        - SPRING_DATASOURCE_PASSWORD=6dp)QZuqXa?,5nC
+        - SPRING_JPA_HIBERNATE_DDL_AUTO=update
+
+  # postgresqldb:
+  #         image: 'postgres'
+  #         container_name: postgres_container
+  #         ports:
+  #           - 3457:5432
+  #         environment:
+  #           - POSTGRES_USER=postgres
+  #           - POSTGRES_PASSWORD=6dp)QZuqXa?,5nC
